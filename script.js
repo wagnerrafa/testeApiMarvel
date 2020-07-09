@@ -1,10 +1,13 @@
 const tStamp =  '1594244037319';
 const publicKey = 'ca318e6cf87496125a923886913f04db';
 const criarMd5 = 'a56edaf91c07ef92a38c3369c3fbe89d';
+var offset = Math.floor((Math.random() * 1500) + 1);
+
 heroiAleatorio();
+
 function heroiAleatorio() {
 
-    const offset = Math.floor((Math.random() * 1500) + 1);
+    // const offset = Math.floor((Math.random() * 1500) + 1);
     console.log(offset);
 
     const url = "http://gateway.marvel.com/v1/public/characters?limit=4&offset="+offset+"&ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
@@ -16,9 +19,9 @@ function heroiAleatorio() {
             console.log("aeeeee");
         }
     }
-
     http.open("GET", url, true);
-    http.send();
+    http.send();    
+
 }
 
 function pegarImagem(dados){ //dados recebidos pelo xml
@@ -33,16 +36,22 @@ function pegarImagem(dados){ //dados recebidos pelo xml
         carta = document.querySelector("#c"+i+"");
         carta.querySelector("#caminho"+i+"").src = resultado["thumbnail"]["path"] +"."+ resultado["thumbnail"]["extension"]; //endereço da imagem
         carta.querySelector("#nome"+i+"").textContent = "Nome: "+resultado["name"]; //return do nome
+        carta.querySelector("#cod"+i+"").textContent = "Id: "+resultado["id"];
+ 
 
     }
 }
 
+pegarHistoria();
+
+function pegarHistoria(elemento){
+    console.log(offset);
+    const codigo = elemento.parentNode.getElementsByTagName("h5")[1].textContent.substring(4, 11);//codigo do personagem
+    console.log("codigoid  "+codigoId);
+    console.log("codigo  "+codigo);
 
 
-function pegarHistoria(){
-
-    const offset = 1010980;
-    const urlHistoria = "https://gateway.marvel.com:443/v1/public/characters/"+offset+"/stories?ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
+    const urlHistoria = "https://gateway.marvel.com/v1/public/characters/"+offset+"/stories?ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
     var http = new XMLHttpRequest();
     http.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -54,7 +63,7 @@ function pegarHistoria(){
 
     http.open("GET", urlHistoria, true);
     http.send();
-    
+    return offset;
     }
 
 function exibirHistoria(dados){

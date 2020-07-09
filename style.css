@@ -2,33 +2,32 @@
 body{
     display: flex;
     flex-wrap: wrap;
-justify-content: center;}
-
-
-/* .row {
-    margin:auto;
-    max-width: 1000px;
-} */
-
-
+    justify-content: center;
+}
 h1 {
     margin:auto;
-    max-width: 950px;
-    color: blanchedalmond;
+    color: #e62429;
+    font-size: 2.4em;
 }
-#figura{
+h5{
+    font-size: 1.1em;
+    margin: 10px;
+}
+.figura{
     display: flex;
     flex-wrap: wrap;
 }
-.card {
+.carta {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center; 
 }
-
-
 img{
     width: 18rem;   
     margin: 20px;
-   
+    height: 20rem;
+}
+.listarSeries{
+    font-size: 1em;
+    width: 9rem;
 }

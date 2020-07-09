@@ -30,8 +30,8 @@ function pegarImagem(dados){ //dados recebidos pelo xml
         
         var resultado = dadosPersonagens[i];
         card = document.querySelector("#c"+i+"");
-        card.querySelector("#i"+i+"").src = resultado["thumbnail"]["path"] +"."+ resultado["thumbnail"]["extension"]; //endereço da imagem
-        card.querySelector("#n"+i+"").textContent = "Nome: "+resultado["name"]; //return do nome
+        card.querySelector("#caminho"+i+"").src = resultado["thumbnail"]["path"] +"."+ resultado["thumbnail"]["extension"]; //endereço da imagem
+        card.querySelector("#nome"+i+"").textContent = "Nome: "+resultado["name"]; //return do nome
     }
 
 }

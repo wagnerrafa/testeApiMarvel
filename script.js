@@ -44,7 +44,7 @@ function pegarImagem(dados){ //dados recebidos pelo xml
 
 function pegarHistoria(codigo){
     console.log(offset);
-    var teste = document.getElementsByClassName("card-title")[codigo];
+    var teste = document.getElementsByClassName("tituloCarta")[codigo];
     var teste2 = teste.textContent.substring(4, 11);
     console.log("codigo   "+codigo);
 
@@ -62,6 +62,11 @@ function pegarHistoria(codigo){
     http.send();
     }
 function exibirHistoria(dados,codigo){
+    if(dados["data"]["count"] < 0){
+        
+        //diz que n tem nenhuma historia
+        return}
+
     console.log("codigo exibir historia"+codigo);
     content = document.querySelector("#listarSeries.listarSeries"+codigo);
     console.log("listar series"+content);
@@ -71,7 +76,8 @@ function exibirHistoria(dados,codigo){
     
     dados["data"]["results"].forEach(element => {
         
-            title = document.createElement("a");
+            title = document.createElement("novaClasseSerie");
+            title.classList.add("itemSerie");
             title.textContent = element["title"];
             content.appendChild(title);
             // for (var i = 0; i < 4; i++) {    

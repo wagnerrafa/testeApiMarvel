@@ -2,7 +2,6 @@ const tStamp =  '1594244037319';
 const publicKey = 'ca318e6cf87496125a923886913f04db';
 const criarMd5 = 'a56edaf91c07ef92a38c3369c3fbe89d';
 var offset = Math.floor((Math.random() * 1500) + 1);
-
 heroiAleatorio();
 
 function heroiAleatorio() {
@@ -43,31 +42,29 @@ function pegarImagem(dados){ //dados recebidos pelo xml
 }
 
 
-function pegarHistoria(elemento){
+function pegarHistoria(codigo){
     console.log(offset);
-    var teste = document.getElementsByClassName("card-title").cod1
+    var teste = document.getElementsByClassName("card-title")[codigo];
     var teste2 = teste.textContent.substring(4, 11);
-    console.log(teste2);
-    //const offset2 = 1009287;
+    console.log("codigo   "+codigo);
 
     const urlHistoria = "https://gateway.marvel.com/v1/public/characters/"+teste2+"/stories?ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
     var http = new XMLHttpRequest();
     http.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
-            exibirHistoria(data);
-            console.log("aeeeee");
+            exibirHistoria(data,codigo);
+            console.log("exibir historia"+codigo);
         }
     }
 
     http.open("GET", urlHistoria, true);
     http.send();
-    return offset;
     }
-
-function exibirHistoria(dados){
-    content = document.querySelector("#listarSeries");
-
+function exibirHistoria(dados,codigo){
+    console.log("codigo exibir historia"+codigo);
+    content = document.querySelector("#listarSeries.listarSeries"+codigo);
+    console.log("listar series"+content);
     console.log(dados["data"]["results"]);
     var dadosPersonagens = dados["data"]["results"];
     console.log("aeeeoooeaa"+dadosPersonagens);

@@ -3,15 +3,20 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #202020;
 }
 h1 {
     margin:auto;
-    color: #e62429;
+    color: white;
     font-size: 2.4em;
+    background-color: #e62429;
+    border: solid 8px #e62429;
+    margin: 1rem;
 }
 h5{
     font-size: 1.1em;
     margin: 10px;
+    color: white;
 }
 .figura{
     display: flex;
@@ -23,10 +28,11 @@ h5{
     display: flex;
     flex-direction: column;
     align-items: center; 
+    background-color: #e62429;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-    margin: 0 0 40px 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border:solid white;
+    box-shadow: 0 2px 5px white);
+    margin: 0 0 40px 20px;
 }
 img{
     width: 18rem;   
@@ -42,9 +48,25 @@ img{
 }
 .itemSerie{
     display: flex;
+    color: white;
 }
 .CorpoCarta{   
     margin-left: 20px;
     margin-right: 20px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.btn{
+        border:1px solid #202020;
+        border-radius:4px;
+        display:inline-block;
+        cursor:pointer;
+        font-family:Verdana;
+        font-weight:bold;
+        font-size:13px;
+        padding:6px 10px;
+        text-decoration:none;
+        background-color: #202020;
+        color: white;
 }

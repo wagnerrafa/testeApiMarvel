@@ -34,7 +34,7 @@ function pegarImagem(dados){ //dados recebidos pelo xml
         var resultado = dadosPersonagens[i];
         carta = document.querySelector("#c"+i+"");
         carta.querySelector("#caminho"+i+"").src = resultado["thumbnail"]["path"] +"."+ resultado["thumbnail"]["extension"]; //endereço da imagem
-        carta.querySelector("#nome"+i+"").textContent = "Nome: "+resultado["name"]; //return do nome
+        carta.querySelector("#nome"+i+"").textContent = resultado["name"]; //return do nome
         carta.querySelector("#cod"+i+"").textContent = "Id: "+resultado["id"];
  
 
@@ -63,7 +63,7 @@ function pegarHistoria(codigo){
     }
 function exibirHistoria(dados,codigo){
     if(dados["data"]["count"] < 0){
-        
+
         //diz que n tem nenhuma historia
         return}
 

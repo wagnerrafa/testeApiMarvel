@@ -12,6 +12,7 @@ h1 {
     background-color: #e62429;
     border: solid 8px #e62429;
     margin: 1rem;
+    border-radius: 0.5rem;
 }
 h5{
     font-size: 1.1em;
@@ -24,20 +25,21 @@ h5{
     justify-content: center;
 }
 .carta {
-    width:20em;
+    width:19em;
     display: flex;
     flex-direction: column;
     align-items: center; 
     background-color: #e62429;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border:solid white;
-    box-shadow: 0 2px 5px white);
+    box-shadow: 0 2px 5px white;
     margin: 0 0 40px 20px;
 }
 img{
     width: 18rem;   
     margin: 20px;
     height: 20rem;
+    border-radius: 0.5rem;
 }
 .listarSeries{
     font-size: 1em;
@@ -51,8 +53,7 @@ img{
     color: white;
 }
 .CorpoCarta{   
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,4 +70,15 @@ img{
         text-decoration:none;
         background-color: #202020;
         color: white;
+        border-radius: 0.5rem;
+        width: 16rem;
+}
+
+@media(max-width:600px) {
+body{
+    margin: 0;
+}
+.carta{
+    margin: 0 0 40px -3px;
+}
 }

@@ -87,5 +87,15 @@ function exibirHistoria(dados,codigo){
             //     carta.querySelector("#serie"+i+"").textContent = "Séries: "+resultado["title"]; //return do nome
             // }
         });
-    
+    }
+
+function alterarButton(){
+    if(document.getElementsByClassName("btn").value == "ativo")
+ {
+    document.getElementsByClassName("btn").value = "esconder";
+ } 
+ else
+ {
+  document.getElementsByClassName("btn").value = "Ativo";
+ }
 }

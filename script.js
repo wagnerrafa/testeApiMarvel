@@ -42,16 +42,15 @@ function pegarImagem(dados){ //dados recebidos pelo xml
     }
 }
 
-pegarHistoria();
 
 function pegarHistoria(elemento){
     console.log(offset);
-    const codigo = elemento.parentNode.getElementsByTagName("h5")[1].textContent.substring(4, 11);//codigo do personagem
-    console.log("codigoid  "+codigoId);
-    console.log("codigo  "+codigo);
+    var teste = document.getElementsByClassName("card-title").cod1
+    var teste2 = teste.textContent.substring(4, 11);
+    console.log(teste2);
+    //const offset2 = 1009287;
 
-
-    const urlHistoria = "https://gateway.marvel.com/v1/public/characters/"+offset+"/stories?ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
+    const urlHistoria = "https://gateway.marvel.com/v1/public/characters/"+teste2+"/stories?ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
     var http = new XMLHttpRequest();
     http.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

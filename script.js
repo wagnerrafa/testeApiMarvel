@@ -4,7 +4,7 @@ const criarMd5 = 'a56edaf91c07ef92a38c3369c3fbe89d';
 var offset = Math.floor((Math.random() * 1500) + 1);
 heroiAleatorio();
 
-function heroiAleatorio() {
+function heroiAleatorio() { //funcao para pegar um heroi aleatorio
 
     const url = "http://gateway.marvel.com/v1/public/characters?limit=4&offset="+offset+"&ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
     var http = new XMLHttpRequest();
@@ -20,8 +20,7 @@ function heroiAleatorio() {
 
 }
 
-function pegarImagem(dados){ //dados recebidos pelo xml
-
+function pegarImagem(dados){ //funcao para receber os dados do heroi e retornar a imagem, nome e id
     var dadosPersonagens = dados["data"]["results"];
     for (var i = 0; i < 4; i++) {    
         
@@ -34,7 +33,7 @@ function pegarImagem(dados){ //dados recebidos pelo xml
 }
 
 
-function pegarSeries(codigo,selecao){
+function pegarSeries(codigo,selecao){ //funcao para pegar as series, historias e eventos do heroi
     
     var elementoID = document.getElementsByClassName("tituloCarta")[codigo];
     var passarId = elementoID.textContent.substring(4, 11);
@@ -51,7 +50,7 @@ function pegarSeries(codigo,selecao){
     http.open("GET", urlHistoria, true);
     http.send();
     }
-function exibirSeries(dados,codigo){
+function exibirSeries(dados,codigo){ //funcao para criar a lista de series, historias e eventos
     content = document.querySelector("#listarSeries.listarSeries"+codigo);
     var dadosPersonagens = dados["data"]["results"];
     apagar(content);
@@ -65,14 +64,11 @@ function exibirSeries(dados,codigo){
         
            
         });
-        
-        
-
     }
-function apagar(content){
+function apagar(content){ //funcao para apagar as listas
     while (content.firstChild) {
         content.removeChild(content.firstChild);
         console.log("removendo");
-        
+
     }
 }

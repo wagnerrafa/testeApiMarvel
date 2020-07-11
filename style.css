@@ -39,7 +39,6 @@ h5{
 .carta:hover{
     background-color:#e62429;
     box-shadow:darkred 0 0 10px 5px;
-    margin-top: -20px;
     transition: 1s;
 }
 img{

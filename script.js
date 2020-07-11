@@ -45,6 +45,7 @@ function pegarSeries(codigo,selecao){ //funcao para pegar as series, historias e
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
             exibirSeries(data,codigo);
+            console.log("exibir series"+data);
         }
     }
     http.open("GET", urlHistoria, true);
@@ -52,16 +53,21 @@ function pegarSeries(codigo,selecao){ //funcao para pegar as series, historias e
     }
 function exibirSeries(dados,codigo){ //funcao para criar a lista de series, historias e eventos
     content = document.querySelector("#listarSeries.listarSeries"+codigo);
-    var dadosPersonagens = dados["data"]["results"];
+  
     apagar(content);
-
+    console.log("dados   "+dados["data"]["results"]);
+    let coisasPersonagens = dados["data"]["results"];
+    if(coisasPersonagens.length <=0){
+        title = document.createElement("div");
+            title.textContent = "Não existe nada até hoje";
+            content.appendChild(title);
+    }
+   
     dados["data"]["results"].forEach(element => {
             
             title = document.createElement("div");
             title.textContent = element["title"];
             content.appendChild(title);
-            console.log("first"+content.firstChild);
-        
            
         });
     }

@@ -48,15 +48,14 @@ img{
     border-radius: 0.5rem;
 }
 
-.listarSeries{
+#listarSeries{
     font-size: 1em;
     width: 9rem;
 }
 .tituloCarta{
     display: none;
 }
-.itemSerie{
-    display: flex;
+#listarSeries{
     color: white;
     margin-top: 5px;
 }

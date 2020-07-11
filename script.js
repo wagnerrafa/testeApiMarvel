@@ -3,7 +3,6 @@ const publicKey = 'ca318e6cf87496125a923886913f04db';
 const criarMd5 = 'a56edaf91c07ef92a38c3369c3fbe89d';
 var offset = Math.floor((Math.random() * 1500) + 1);
 heroiAleatorio();
-console.log(codigo);
 
 function heroiAleatorio() {
 
@@ -53,24 +52,26 @@ function pegarSeries(codigo,selecao){
     http.send();
     }
 function exibirSeries(dados,codigo){
-   
     content = document.querySelector("#listarSeries.listarSeries"+codigo);
     var dadosPersonagens = dados["data"]["results"];
+    apagar(content);
+
     dados["data"]["results"].forEach(element => {
-        
-            title = document.createElement("novaClasseSerie");
-            title.classList.add("itemSerie");
+            
+            title = document.createElement("div");
             title.textContent = element["title"];
             content.appendChild(title);
+            console.log("first"+content.firstChild);
+        
+           
         });
+        
+        
+
     }
-
-
-    
-    // function mudarSerie(codigo){
-    //     const img = document.querySelector("#listarSeries");
-    //     img.removeAttribute('listarSeries0');
-    //     content = document.querySelector("img");
-    //     content.classList.remove('img');
-
-    // }
+function apagar(content){
+    while (content.firstChild) {
+        content.removeChild(content.firstChild);
+        console.log("removendo");
+    }
+}

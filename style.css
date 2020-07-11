@@ -1,7 +1,6 @@
 
 body{
-    display: flex;
-    flex-wrap: wrap;
+  
     justify-content: center;
     background-color: #202020;
 }
@@ -13,6 +12,8 @@ h1 {
     border: solid 8px darkred;
     margin: 1rem;
     border-radius: 0.5rem;
+    justify-content: center;
+    display: flex;
     
 }
 h5{
@@ -23,7 +24,7 @@ h5{
 .figura{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 .carta {
     width:19em;

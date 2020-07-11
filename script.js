@@ -73,5 +73,6 @@ function apagar(content){
     while (content.firstChild) {
         content.removeChild(content.firstChild);
         console.log("removendo");
+        
     }
 }

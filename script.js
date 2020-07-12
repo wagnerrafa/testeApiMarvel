@@ -22,13 +22,16 @@ function heroiAleatorio() { //funcao para pegar um heroi aleatorio
 
 function pegarImagem(dados){ //funcao para receber os dados do heroi e retornar a imagem, nome e id
     var dadosPersonagens = dados["data"]["results"];
+    console.log(dados["data"]["results"]);
+
     for (var i = 0; i < 4; i++) {    
         
         var resultado = dadosPersonagens[i];
         carta = document.querySelector("#c"+i+"");
         carta.querySelector("#caminho"+i+"").src = resultado["thumbnail"]["path"] +"."+ resultado["thumbnail"]["extension"]; //endereço da imagem
-        carta.querySelector("#nome"+i+"").textContent = resultado["name"]; //return do nome
+        carta.querySelector("#nome"+i+"").textContent = resultado["name"]; //return do nome description
         carta.querySelector("#cod"+i+"").textContent = "Id: "+resultado["id"];
+        carta.querySelector("#descricao"+i+"").textContent = "Descrição: "+resultado["description"];
     }
 }
 
@@ -75,6 +78,21 @@ function apagar(content){ //funcao para apagar as listas
     while (content.firstChild) {
         content.removeChild(content.firstChild);
         console.log("removendo");
-
     }
+}
+function mudarCor(cor){
+    // document.getElementById('cod1').className = 'newclass';
+    document.getElementById("c"+cor).className = 'newclass';
+    abrirMenuMobile(cor);
+    apagar(content);
+}
+
+function abrirMenuMobile(cor) {
+    let navMenu = document.querySelector('.menu-container'+cor);
+    navMenu.classList.toggle('menu-ativo');
+}
+function voltar(volta){
+    document.getElementById("c"+volta).className = 'carta';
+    console.log("corr      "+cor);
+    abrirMenuMobile(cor);
 }

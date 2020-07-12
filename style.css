@@ -12,9 +12,24 @@ h1 {
     border: solid 8px darkred;
     margin: 1rem;
     border-radius: 0.5rem;
-    justify-content: center;
+    justify-content: space-evenly;
     display: flex;
     
+}
+.menu-container0{
+    display: none;
+}
+.menu-container1{
+    display: none;
+}
+.menu-container2{
+    display: none;
+}
+.menu-container3{
+    display: none;
+}
+.des{
+    color: darkred;
 }
 h5{
     font-size: 1.1em;
@@ -48,6 +63,10 @@ img{
     height: 20rem;
     border-radius: 0.5rem;
 }
+.menu-ativo {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 #listarSeries{
     font-size: 1em;
@@ -69,6 +88,28 @@ img{
     flex-direction: column;
     justify-content: center;
 }
+
+.newclass{
+    background-color: gold;
+    margin: 0;
+    height: 30rem;
+    width: 19em;
+    border-radius: 0.5rem;
+    border:solid white;
+    box-shadow: 0 2px 5px white;
+    margin: 0 0 40px 20px;
+}
+
+.newclass img{
+    display: none;
+}
+.newclass button{
+    display: none;
+}
+.newclass h5{
+    display: none;
+}
+
 .btn{
         border:1px solid #202020;
         border-radius:4px;

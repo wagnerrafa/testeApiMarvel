@@ -68,13 +68,12 @@ img{
     display: flex;
     flex-wrap: wrap;
 }
-
+.tituloCarta{
+    display: none;
+}
 #listarSeries{
     font-size: 1em;
     width: 9rem;
-}
-.tituloCarta{
-    display: none;
 }
 #listarSeries{
     color: white;
@@ -89,7 +88,6 @@ img{
     flex-direction: column;
     justify-content: center;
 }
-
 .newclass{
     background-color: gold;
     margin: 0;
@@ -100,7 +98,6 @@ img{
     box-shadow: 0 2px 5px white;
     margin: 0 0 40px 20px;
 }
-
 .newclass img{
     display: none;
 }
@@ -110,7 +107,6 @@ img{
 .newclass h5{
     display: none;
 }
-
 .btn{
         border:1px solid #202020;
         border-radius:4px;

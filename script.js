@@ -22,7 +22,6 @@ function heroiAleatorio() { //funcao para pegar um heroi aleatorio
 
 function pegarImagem(dados){ //funcao para receber os dados do heroi e retornar a imagem, nome e id
     var dadosPersonagens = dados["data"]["results"];
-    console.log(dados["data"]["results"]);
 
     for (var i = 0; i < 4; i++) {    
         
@@ -32,7 +31,6 @@ function pegarImagem(dados){ //funcao para receber os dados do heroi e retornar 
         carta.querySelector("#nome"+i+"").textContent = resultado["name"]; //return do nome description
         carta.querySelector("#cod"+i+"").textContent = "Id: "+resultado["id"];
         carta.querySelector("#descricao"+i+"").textContent = "Descrição: "+resultado["description"];
-        console.log(resultado["description"].length);
         if(resultado["description"].length<=0){
             carta.querySelector("#descricao"+i+"").textContent = "Descrição: Não há informações sobre esse personagem";        }
         
@@ -52,7 +50,6 @@ function pegarSeries(codigo,selecao){ //funcao para pegar as series, historias e
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
             exibirSeries(data,codigo);
-            console.log("exibir series"+data);
         }
     }
     http.open("GET", urlHistoria, true);
@@ -62,7 +59,6 @@ function exibirSeries(dados,codigo){ //funcao para criar a lista de series, hist
     content = document.querySelector("#listarSeries.listarSeries"+codigo);
   
     apagar(content);
-    console.log("dados   "+dados["data"]["results"]);
     let coisasPersonagens = dados["data"]["results"];
     if(coisasPersonagens.length <=0){
         title = document.createElement("div");
@@ -81,7 +77,6 @@ function exibirSeries(dados,codigo){ //funcao para criar a lista de series, hist
 function apagar(content){ //funcao para apagar as listas
     while (content.firstChild) {
         content.removeChild(content.firstChild);
-        console.log("removendo");
     }
 }
 function mudarCor(cor){
@@ -98,6 +93,5 @@ function abrirDescricao(cor) {
 }
 function voltar(volta){
     document.getElementById("c"+volta).className = 'carta';
-    console.log("corr      "+cor);
     abrirDescricao(cor);
 }

@@ -86,9 +86,7 @@ function apagar(content){ //funcao para apagar as listas
 function mudarCor(cor){
     document.getElementById("c"+cor).className = 'newclass';
     abrirDescricao(cor);
-    apagar(content); var navMenu = document.querySelector('.menu-container'+cor);
-    navMenu.classList.toggle('menu-ativo');
-
+    apagar(content); 
 }
 
 function abrirDescricao(cor) {

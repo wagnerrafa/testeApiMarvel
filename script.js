@@ -5,19 +5,9 @@ var offset = Math.floor((Math.random() * 1500) + 1);
 heroiAleatorio();
 
 function heroiAleatorio() { //funcao para pegar um heroi aleatorio
-
-    const url = "http://gateway.marvel.com/v1/public/characters?limit=4&offset="+offset+"&ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
-    var http = new XMLHttpRequest();
-    http.onreadystatechange = function() {
-        
-        if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            pegarImagem(data);
-        }
-    }
-    http.open("GET", url, true);
-    http.send();    
-
+    qualfuncaoChamar = false;
+    var urlHistoria = "http://gateway.marvel.com/v1/public/characters?limit=4&offset="+offset+"&ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
+    qualfuncao(qualfuncaoChamar,urlHistoria);
 }
 
 function pegarImagem(dados){ //funcao para receber os dados do heroi e retornar a imagem, nome e id
@@ -36,24 +26,38 @@ function pegarImagem(dados){ //funcao para receber os dados do heroi e retornar 
         
     }
 }
+function qualfuncao(qualfuncaoChamar,urlHistoria){
+    url = urlHistoria;
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function() {
+        
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            if(qualfuncaoChamar== true){
+                exibirSeries(data,codigo);
+
+            }else{
+                pegarImagem(data);
+
+            }
+
+        }
+    }
+    http.open("GET", urlHistoria, true);
+    http.send();
+
+}
+
 
 
 function pegarSeries(codigo,selecao){ //funcao para pegar as series, historias e eventos do heroi
     
     var elementoID = document.getElementsByClassName("tituloCarta")[codigo];
     var passarId = elementoID.textContent.substring(4, 11);
-    
-    const urlHistoria = "https://gateway.marvel.com/v1/public/characters/"+passarId+"/"+selecao+"?ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
-    var http = new XMLHttpRequest();
-    http.onreadystatechange = function() {
-        
-        if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            exibirSeries(data,codigo);
-        }
-    }
-    http.open("GET", urlHistoria, true);
-    http.send();
+    var qualfuncaoChamar = true;
+    var urlHistoria = "https://gateway.marvel.com/v1/public/characters/"+passarId+"/"+selecao+"?ts="+tStamp+"&apikey="+publicKey+"&hash="+criarMd5;
+    qualfuncao(qualfuncaoChamar,urlHistoria);
+  
     }
 function exibirSeries(dados,codigo){ //funcao para criar a lista de series, historias e eventos
     content = document.querySelector("#listarSeries.listarSeries"+codigo);
@@ -80,10 +84,10 @@ function apagar(content){ //funcao para apagar as listas
     }
 }
 function mudarCor(cor){
-    // document.getElementById('cod1').className = 'newclass';
     document.getElementById("c"+cor).className = 'newclass';
     abrirDescricao(cor);
-    apagar(content);
+    apagar(content); var navMenu = document.querySelector('.menu-container'+cor);
+    navMenu.classList.toggle('menu-ativo');
 
 }
 
@@ -94,4 +98,5 @@ function abrirDescricao(cor) {
 function voltar(volta){
     document.getElementById("c"+volta).className = 'carta';
     abrirDescricao(cor);
+
 }

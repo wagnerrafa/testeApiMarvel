@@ -32,6 +32,10 @@ function pegarImagem(dados){ //funcao para receber os dados do heroi e retornar 
         carta.querySelector("#nome"+i+"").textContent = resultado["name"]; //return do nome description
         carta.querySelector("#cod"+i+"").textContent = "Id: "+resultado["id"];
         carta.querySelector("#descricao"+i+"").textContent = "Descrição: "+resultado["description"];
+        console.log(resultado["description"].length);
+        if(resultado["description"].length<=0){
+            carta.querySelector("#descricao"+i+"").textContent = "Descrição: Não há informações sobre esse personagem";        }
+        
     }
 }
 
@@ -83,16 +87,17 @@ function apagar(content){ //funcao para apagar as listas
 function mudarCor(cor){
     // document.getElementById('cod1').className = 'newclass';
     document.getElementById("c"+cor).className = 'newclass';
-    abrirMenuMobile(cor);
+    abrirDescricao(cor);
     apagar(content);
+
 }
 
-function abrirMenuMobile(cor) {
-    let navMenu = document.querySelector('.menu-container'+cor);
+function abrirDescricao(cor) {
+    var navMenu = document.querySelector('.menu-container'+cor);
     navMenu.classList.toggle('menu-ativo');
 }
 function voltar(volta){
     document.getElementById("c"+volta).className = 'carta';
     console.log("corr      "+cor);
-    abrirMenuMobile(cor);
+    abrirDescricao(cor);
 }

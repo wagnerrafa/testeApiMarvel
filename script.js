@@ -48,8 +48,6 @@ function qualfuncao(qualfuncaoChamar,urlHistoria){
 
 }
 
-
-
 function pegarSeries(codigo,selecao){ //funcao para pegar as series, historias e eventos do heroi
     
     var elementoID = document.getElementsByClassName("tituloCarta")[codigo];
@@ -84,9 +82,11 @@ function apagar(content){ //funcao para apagar as listas
     }
 }
 function mudarCor(cor){
+
     document.getElementById("c"+cor).className = 'newclass';
     abrirDescricao(cor);
     apagar(content); 
+
 }
 
 function abrirDescricao(cor) {
@@ -95,6 +95,18 @@ function abrirDescricao(cor) {
 }
 function voltar(volta){
     document.getElementById("c"+volta).className = 'carta';
-    abrirDescricao(cor);
+    verificarAtivo();
 
 }
+function verificarAtivo(){
+    var navMenuTeste = document.querySelector('.menu-ativo');
+
+    if(navMenuTeste !=null){
+    var volta = navMenuTeste.className[14];
+
+    navMenuTeste.className = 'menu-container'+volta;
+    navMenuTeste.classList.remove('menu-ativo');
+    voltar(volta);
+    }
+}
+

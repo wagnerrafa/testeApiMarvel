@@ -1,11 +1,10 @@
-
-body{
-  
+body {
     justify-content: center;
     background-color: #202020;
-}
-h1 {
-    margin:auto;
+  }
+  
+  h1 {
+    margin: auto;
     color: white;
     font-size: 2.4em;
     background-color: darkred;
@@ -14,123 +13,143 @@ h1 {
     border-radius: 0.5rem;
     justify-content: space-evenly;
     display: flex;
-    
-}
-.menu-container0{
+  }
+  .menu-container0 {
     display: none;
-}
-.menu-container1{
+  }
+  
+  .menu-container1 {
     display: none;
-}
-.menu-container2{
+  }
+  
+  .menu-container2 {
     display: none;
-}
-.menu-container3{
+  }
+  
+  .menu-container3 {
     display: none;
-}
-.des{
+  }
+  
+  .des {
     color: darkred;
-}
-h5{
+  }
+  
+  h5 {
     font-size: 1.1em;
     margin: 10px;
     color: white;
-}
-.figura{
+  }
+  
+  .figura {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-.carta {
-    width:19em;
+  }
+  
+  .carta {
+    width: 19em;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     background-color: darkred;
     border-radius: 0.5rem;
-    border:solid white;
+    border: solid white;
     box-shadow: 0 2px 5px white;
     margin: 0 0 40px 20px;
-}
-.carta:hover{
-    background-color:#e62429;
-    box-shadow:darkred 0 0 10px 5px;
+  }
+  
+  .carta:hover {
+    background-color: #e62429;
+    box-shadow: darkred 0 0 10px 5px;
     transition: 1s;
-}
-img{
-    width: 18rem;   
+  }
+  
+  img {
+    width: 18rem;
     margin: 20px;
     height: 20rem;
     border-radius: 0.5rem;
     cursor: pointer;
-}
-.menu-ativo {
+  }
+  
+  .menu-ativo {
     display: flex;
     flex-wrap: wrap;
-}
-.tituloCarta{
+  }
+  
+  .tituloCarta {
     display: none;
-}
-#listarSeries{
+  }
+  
+  #listarSeries {
     font-size: 1em;
     width: 9rem;
-}
-#listarSeries{
+  }
+  
+  #listarSeries {
     color: white;
     margin-top: 5px;
-}
-#listarSeries div{
+  }
+  
+  #listarSeries div {
     width: 16rem;
-}
-.CorpoCarta{   
+  }
+  
+  .CorpoCarta {
     margin: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.newclass{
+  }
+  
+  .newclass {
     background-color: gold;
     margin: 0;
     height: 30rem;
     width: 19em;
     border-radius: 0.5rem;
-    border:solid white;
+    border: solid white;
     box-shadow: 0 2px 5px white;
     margin: 0 0 40px 20px;
-}
-.newclass img{
+  }
+  
+  .newclass img {
     display: none;
-}
-.newclass button{
+  }
+  
+  .newclass button {
     display: none;
-}
-.newclass h5{
+  }
+  
+  .newclass h5 {
     display: none;
-}
-.btn{
-        border:1px solid #202020;
-        border-radius:4px;
-        display:inline-block;
-        cursor:pointer;
-        font-family:Verdana;
-        font-weight:bold;
-        font-size:13px;
-        padding:6px 10px;
-        text-decoration:none;
-        background-color: #202020;
-        color: white;
-        border-radius: 0.5rem;
-        width: 16rem;
-}
-.btn:hover{
+  }
+  
+  .btn {
+    border: 1px solid #202020;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 6px 10px;
+    text-decoration: none;
+    background-color: #202020;
+    color: white;
+    border-radius: 0.5rem;
+    width: 16rem;
+  }
+  
+  .btn:hover {
     border-color: white;
-}
-
-@media(max-width:600px) {
-body{
-    margin: 0;
-}
-.carta{
-    margin: 0 0 40px -3px;
-}
-}
+  }
+  
+  @media(max-width:600px) {
+    body {
+      margin: 0;
+    }
+    .carta {
+      margin: 0 0 40px -3px;
+    }
+  }

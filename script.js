@@ -60,7 +60,7 @@ function pegarSeries(codigo,selecao){ //funcao para pegar as series, historias e
 function exibirSeries(dados,codigo){ //funcao para criar a lista de series, historias e eventos
     content = document.querySelector("#listarSeries.listarSeries"+codigo);
   
-    apagar(content);
+    apagar();
     let coisasPersonagens = dados["data"]["results"];
     if(coisasPersonagens.length <=0){
         title = document.createElement("div");
@@ -76,8 +76,9 @@ function exibirSeries(dados,codigo){ //funcao para criar a lista de series, hist
            
         });
     }
-function apagar(content){ //funcao para apagar as listas
-    while (content.firstChild) {
+function apagar(){ //funcao para apagar as listas
+    content = document.querySelector("#listarSeries.listarSeries"+codigo);
+     while (content.firstChild) {
         content.removeChild(content.firstChild);
     }
 }
@@ -85,7 +86,7 @@ function mudarCor(cor){
 
     document.getElementById("c"+cor).className = 'newclass';
     abrirDescricao(cor);
-    apagar(content); 
+    apagar();
 
 }
 
